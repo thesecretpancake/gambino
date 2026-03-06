@@ -12,8 +12,7 @@
     "start:debug": "ts-node --inspect-brk src/main.ts",
     "prepare": "husky",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "docker:up": "docker compose up --build -d"
+    "test:watch": "jest --watch"
   },
   "jest": {
     "preset": "ts-jest",
