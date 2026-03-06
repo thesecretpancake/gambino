@@ -35,6 +35,7 @@ export class PermitCheckerCron implements OnModuleInit {
         );
         this.schedulerRegistry.deleteCronJob('permit-checker');
         this.logger.log('Permit found — cron job stopped.');
+        process.exit(0);
       } else {
         this.logger.log(`No availability for permit ${permitId}.`);
       }
