@@ -1,0 +1,79 @@
+{
+  "name": "gambino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "start": "node dist/main",
+    "start:dev": "ts-node src/main.ts",
+    "start:debug": "ts-node --inspect-brk src/main.ts",
+    "prepare": "husky",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "docker:up": "docker compose up --build -d"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/*.spec.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesecretpancake/gambino.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thesecretpancake/gambino/issues"
+  },
+  "homepage": "https://github.com/thesecretpancake/gambino#readme",
+  "devDependencies": {
+    "@nestjs/testing": "^11.1.16",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.3.5",
+    "@types/nodemailer": "^7.0.11",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.3.2",
+    "prettier": "^3.8.1",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.16",
+    "@nestjs/core": "^11.1.16",
+    "@nestjs/schedule": "^6.1.1",
+    "@nestjs/axios": "^4.0.0",
+    "axios": "^1.7.9",
+    "nodemailer": "^8.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  }
+}
