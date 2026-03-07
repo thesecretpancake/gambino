@@ -1,6 +1,6 @@
 import { DynamicModule, Module, Type } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
-import { PermitCheckerCron } from './permit-checker.cron';
+import { PermitCheckerService } from './permit-checker.service';
 import { NotificationModule } from '../notification/notification.module';
 import { PermitAvailabilityAbstractApi } from './api/permit-availability.abstract.api';
 
@@ -15,7 +15,7 @@ export class PermitCheckerModule {
       providers: [
         apiClass,
         { provide: PermitAvailabilityAbstractApi, useExisting: apiClass },
-        PermitCheckerCron,
+        PermitCheckerService,
       ],
     };
   }
