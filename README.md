@@ -8,7 +8,10 @@ On each run, the app checks permit availability for each configured trail/date r
 
 ## Running locally
 
-**Prerequisites:** Node.js 20+
+**Prerequisites:**
+
+- Node.js 20+
+- ENV variables setup (see below)
 
 ```bash
 # Install dependencies
@@ -76,7 +79,7 @@ Note: trailId can be found by doing the following:
 
 1. open your browser's devtools
 2. visit an inyo NF recreation gov wilderness permit page
-3. go to the netowrk tab and find the `permitcontent` API
+3. go to the network tab and find the `permitcontent` API
 4. Search the API by the name of your desired trailhead in the payload.campsites section (cmd+f is easiest)
 5. Once you've located the campsites entry, the id can be found under `division_ids`
 

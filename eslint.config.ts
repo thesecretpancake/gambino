@@ -1,20 +1,19 @@
-const typescriptEslint = require('@typescript-eslint/eslint-plugin');
-const tsParser = require('@typescript-eslint/parser');
-const prettierPlugin = require('eslint-plugin-prettier');
-const prettierConfig = require('eslint-config-prettier');
+import { defineConfig } from 'eslint/config';
+import tseslint from 'typescript-eslint';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
-module.exports = [
-  ...typescriptEslint.configs['flat/recommended'].map((config) => ({
+export default defineConfig([
+  ...tseslint.configs.recommended.map((config) => ({
     ...config,
     files: ['src/**/*.ts'],
   })),
   {
     files: ['src/**/*.ts'],
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
         project: true,
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     plugins: {
@@ -36,4 +35,4 @@ module.exports = [
       'no-console': 'warn',
     },
   },
-];
+]);

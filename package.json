@@ -1,8 +1,13 @@
 {
   "name": "gambino",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/main.js",
+  "type": "commonjs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesecretpancake/gambino.git"
+  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -10,52 +15,7 @@
     "start": "node dist/main",
     "start:dev": "ts-node -r dotenv/config src/main.ts",
     "start:debug": "ts-node --inspect-brk -r dotenv/config src/main.ts",
-    "prepare": "husky",
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/*.spec.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "js",
-      "json"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thesecretpancake/gambino.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/thesecretpancake/gambino/issues"
-  },
-  "homepage": "https://github.com/thesecretpancake/gambino#readme",
-  "devDependencies": {
-    "@nestjs/testing": "^11.1.16",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^25.3.5",
-    "@types/nodemailer": "^7.0.11",
-    "@typescript-eslint/eslint-plugin": "^8.56.1",
-    "@typescript-eslint/parser": "^8.56.1",
-    "dotenv": "^17.3.1",
-    "eslint": "^10.0.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "husky": "^9.1.7",
-    "jest": "^30.2.0",
-    "lint-staged": "^16.3.2",
-    "prettier": "^3.8.1",
-    "ts-jest": "^29.4.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.ts": [
@@ -66,11 +26,26 @@
       "prettier --write"
     ]
   },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^25.3.5",
+    "@types/nodemailer": "^7.0.11",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.3.2",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
   "dependencies": {
     "@nestjs/axios": "^4.0.0",
     "@nestjs/common": "^11.1.16",
     "@nestjs/core": "^11.1.16",
-    "@nestjs/schedule": "^6.1.1",
     "axios": "^1.7.9",
     "nodemailer": "^8.0.1",
     "reflect-metadata": "^0.2.2",
